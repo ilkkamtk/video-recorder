@@ -1,12 +1,8 @@
 angular.module('myApp')
-    .service('MediaService', function ($rootScope) {
+    .service('MediaService', function () {
         var mediaVariables = {
             mediaUrl: 'http://util.mw.metropolia.fi/uploads/',
             userData: {}
-        };
-
-        mediaVariables.setVariable = function (key, value) {
-            mediaVariables[key] = value;
         };
 
         mediaVariables.handleError = function (error) {

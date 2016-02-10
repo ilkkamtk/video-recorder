@@ -4,5 +4,5 @@ angular.module('myApp')
             replace: true,
             restrict: 'E',
             templateUrl: 'views/showFiles.html'
-        }
+        };
     });

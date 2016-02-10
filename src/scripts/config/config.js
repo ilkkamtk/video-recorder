@@ -1,15 +1,15 @@
 angular.module('myApp')
-    .config(function ($routeProvider) {
-        $routeProvider
-            .when('/', {
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('login', {
+                url: '/',
                 templateUrl: 'views/loginForm.html',
                 controller: 'LoginController'
             })
-            .when('/myFiles', {
-                templateUrl: 'views/showFiles.html',
-                controller: 'UserFilesController'
-            })
-            .otherwise({
-                redirectTo: '/'
+            .state('main', {
+                url: '/main',
+                templateUrl: 'views/main.html',
             });
+
+        $urlRouterProvider.otherwise("/");
     });

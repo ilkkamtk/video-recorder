@@ -1,14 +1,15 @@
 {
-    "name": "temp-app-name",
-    "description": "Simple seed template for an angular app.",
-    "authors": [
+  "name": "temp-app-name",
+  "description": "Simple seed template for an angular app.",
+  "authors": [
     "developerName"
   ],
-    "license": "ISC",
-    "private": true,
-    "dependencies": {
-        "bootstrap": "~3.3.6",
-        "angular": "~1.5.0",
-        "angular-route": "^1.5.0"
-    }
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "ngCordova": "^0.1.24-alpha"
+  }
 }

@@ -10,7 +10,9 @@ module.exports = function (grunt) {
                 src: [
               'bower_components/jquery/dist/jquery.min.js',
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
-              'bower_components/angular/angular.min.js'
+              'bower_components/angular/angular.min.js',
+              'bower_components/angular-ui-router/release/angular-ui-router.js',
+              'bower_components/ngCordova/dist/ng-cordova.js'
              ],
                 dest: 'build/vendor.js'
             },
@@ -77,7 +79,7 @@ module.exports = function (grunt) {
                         // Remove all script elements
                         content = content.replace(/<script.*script>\s*\n*/g, "");
                         // Add concatenated js files just before closing body tag
-                        content = content.replace(/<\/body>/, '<script src="vendor.js"></script>\n' +
+                        content = content.replace(/<\/body>/, '<script src="cordova.js"></script>\n' + '<script src="vendor.js"></script>\n' +
                             '<script src="app.min.js"></script>\n</body>');
                         return content;
                     }

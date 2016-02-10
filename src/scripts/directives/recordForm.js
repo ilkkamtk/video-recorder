@@ -1,8 +1,8 @@
 angular.module('myApp')
-    .directive('loginForm', function () {
+    .directive('recordForm', function () {
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'views/loginForm.html'
+            templateUrl: 'views/recordForm.html'
         };
     });

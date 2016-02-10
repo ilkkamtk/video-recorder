@@ -1,9 +1,9 @@
 angular.module('myApp')
-    .controller('LoginController', function ($scope, $location, AjaxFactory, MediaService) {
+    .controller('LoginController', function ($scope, $state, AjaxFactory, MediaService) {
 
         var doLogin = function (response) {
-            MediaService.setVariable('userData', response.data);
-            $location.path('/myFiles').replace();
+            MediaService.userData = response.data;
+            $state.go('main');
         };
 
 

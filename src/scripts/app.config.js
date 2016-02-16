@@ -3,12 +3,17 @@ angular.module('myApp')
         $stateProvider
             .state('login', {
                 url: '/',
-                templateUrl: 'views/loginForm.html',
+                templateUrl: 'scripts/login/loginForm.html',
                 controller: 'LoginController'
             })
             .state('main', {
                 url: '/main',
-                templateUrl: 'views/main.html',
+                templateUrl: 'scripts/UI/main.html',
+            })
+            .state('logout', {
+                url: '/logout',
+                templateUrl: 'scripts/login/logout.html',
+                controller: 'LogoutController'
             });
 
         $urlRouterProvider.otherwise("/");

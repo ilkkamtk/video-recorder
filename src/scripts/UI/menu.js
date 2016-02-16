@@ -1,8 +1,8 @@
 angular.module('myApp')
-    .directive('recordForm', function () {
+    .directive('menu', function () {
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'views/recordForm.html'
+            templateUrl: 'scripts/UI/menu.html'
         };
     });

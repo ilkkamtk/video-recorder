@@ -1,0 +1,27 @@
+<div class="modal fade bs-example-modal-lg" id="mediaModal" tabindex="-1" role="dialog" aria-labelledby="MediaPlayer">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{ title }}</h4>
+            </div>
+            <div class="modal-body">
+                <div ng-if="type == 'image'">
+                    <img ng-src="{{trustSrc(path)}}" class="img-responsive">
+                </div>
+                <div ng-if="type == 'audio'">
+                    <audio controls style="width:100%;">
+                        <source ng-src="{{ trustSrc(path) }}" type="{{ mimeType }}">
+                    </audio>
+                </div>
+                <div ng-if="type == 'video'" class="embed-responsive embed-responsive-16by9">
+                    <video controls>
+                        <source ng-src="{{ trustSrc(path) }}" type="{{ mimeType }}">
+                    </video>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

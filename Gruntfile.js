@@ -10,15 +10,16 @@ module.exports = function (grunt) {
                 src: [
               'bower_components/jquery/dist/jquery.min.js',
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
-              'bower_components/angular/angular.min.js',
+              'bower_components/bootstrap-sidebar/dist/js/sidebar.js',
+              'bower_components/angular/angular.js',
               'bower_components/angular-ui-router/release/angular-ui-router.js',
               'bower_components/ngCordova/dist/ng-cordova.js'
              ],
                 dest: 'build/vendor.js'
             },
             app: {
-                src: ['src/**/*.js'],
-                dest: 'build/app.js'
+                src: ['src/**/*.js','!src/scripts/app.js'],
+                dest: 'build/custom.js'
             }
         },
         // Minify and add a banner comment to app js file:
@@ -29,7 +30,7 @@ module.exports = function (grunt) {
             },
             build: {
                 src: '<%= concat.app.dest %>',
-                dest: 'build/app.min.js'
+                dest: 'build/custom.min.js'
             }
         },
         // Check all js files with jshint:
@@ -51,16 +52,32 @@ module.exports = function (grunt) {
                     expand: true,
                     flatten: true,
                     src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-                'src/**/*.css'],
+                'src/**/*.css', 'bower_components/bootstrap-sidebar/dist/css/sidebar.css'],
                     dest: 'build/css/'
         }]
             },
             views: {
                 files: [{
                     expand: true,
+                    cwd: 'src/scripts',
+                    src: ['**/*.html'],
+                    dest: 'build/scripts/'
+        }]
+            },
+            fonts: {
+                files: [{
+                    expand: true,
                     flatten: true,
-                    src: ['src/views/*.html'],
-                    dest: 'build/views/'
+                    src: ['bower_components/bootstrap/fonts/*.*'],
+                    dest: 'build/fonts/'
+        }]
+            },
+            app: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['src/scripts/app.js'],
+                    dest: 'build/'
         }]
             },
             html: {
@@ -75,12 +92,11 @@ module.exports = function (grunt) {
                         // Remove all html comments
                         content = content.replace(/<!--[\s\S]*?-->\s*\n*/g, "");
                         // Change bootstrap css file path
-                        content = content.replace(/..\/bower_components\/bootstrap\/dist\//g, "");
+                        content = content.replace(/..\/bower_components\/bootstrap\/dist\//g, "");content = content.replace(/..\/bower_components\/bootstrap-sidebar\/dist\//g, "");
                         // Remove all script elements
                         content = content.replace(/<script.*script>\s*\n*/g, "");
                         // Add concatenated js files just before closing body tag
-                        content = content.replace(/<\/body>/, '<script src="cordova.js"></script>\n' + '<script src="vendor.js"></script>\n' +
-                            '<script src="app.min.js"></script>\n</body>');
+                        content = content.replace(/<\/body>/, '<script src="cordova.js"></script>\n' + '<script src="vendor.js"></script>\n' + '<script src="app.js"></script>\n' + '<script src="custom.min.js"></script>\n</body>');
                         return content;
                     }
                 }

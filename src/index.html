@@ -9,19 +9,25 @@
     <title>Bootstrap Template</title>
     <!-- Bootstrap -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-sidebar/dist/css/sidebar.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
     <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 </head>
 
 <body>
-   <div class="container">
+    <media-modal></media-modal>
+    <sound-record-modal></sound-record-modal>
+    <video-record-modal></video-record-modal>
+   <div class="container-fluid">
+        <navbar></navbar>
         <div ui-view></div>
     </div>
-    <script src="cordova.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/bootstrap-sidebar/dist/js/sidebar.js"></script>
 
     <!-- Include angular files & plugins -->
     <script src="../bower_components/angular/angular.js"></script>
@@ -30,18 +36,27 @@
 
     <!-- Include My App's JS file(s)-->
     <script src="scripts/app.js"></script>
-    <script src="scripts/config/config.js"></script>
+    <script src="scripts/app.config.js"></script>
     <!-- controllers -->
-    <script src="scripts/controllers/uploadController.js"></script>
-    <script src="scripts/controllers/loginController.js"></script>
-    <script src="scripts/controllers/userFilesController.js"></script>
-    <script src="scripts/controllers/recordController.js"></script>
+    <script src="scripts/mediaApi/uploadController.js"></script>
+    <script src="scripts/login/loginController.js"></script>
+    <script src="scripts/mediaApi/userFilesController.js"></script>
+    <script src="scripts/sound/soundRecordController.js"></script>
+    <script src="scripts/mediaApi/mediaModalController.js"></script>
+    <script src="scripts/video/videoRecordController.js"></script>
+    <script src="scripts/login/logoutController.js"></script>
+    <script src="scripts/UI/navbarController.js"></script>
 
     <!-- directives -->
-    <script src="scripts/directives/fileForm.js"></script>
-    <script src="scripts/directives/loginForm.js"></script>
-    <script src="scripts/directives/showFiles.js"></script>
-    <script src="scripts/directives/recordForm.js"></script>
+    <script src="scripts/mediaApi/fileForm.js"></script>
+    <script src="scripts/login/loginForm.js"></script>
+    <script src="scripts/mediaApi/showFiles.js"></script>
+    <script src="scripts/sound/soundRecordModal.js"></script>
+    <script src="scripts/mediaApi/mediaModal.js"></script>
+    <script src="scripts/UI/menu.js"></script>
+    <script src="scripts/UI/navbar.js"></script>
+    <script src="scripts/video/videoRecordModal.js"></script>
+
 
     <!-- services -->
     <script src="scripts/services/ajaxFactory.js"></script>

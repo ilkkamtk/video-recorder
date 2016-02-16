@@ -3,6 +3,7 @@ angular.module('myApp')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'views/loginForm.html'
+            templateUrl: 'scripts/login/loginForm.html',
+            controller: 'LoginController'
         };
     });

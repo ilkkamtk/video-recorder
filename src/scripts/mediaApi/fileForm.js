@@ -3,6 +3,6 @@ angular.module('myApp')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'views/fileForm.html'
+            templateUrl: 'scripts/mediaApi/fileForm.html'
         };
     });

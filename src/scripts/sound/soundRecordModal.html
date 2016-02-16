@@ -1,0 +1,25 @@
+<div class="modal fade bs-example-modal-lg" id="soundModal" tabindex="-1" role="dialog" aria-labelledby="SoundRecorder">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Record audio</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Title" ng-model="title">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3" ng-model="description" placeholder="Description"></textarea>
+                </div>
+                <button ng-click="record()" class="btn btn-danger"><span class="glyphicon glyphicon-record" aria-hidden="true"></span></button>
+                <button ng-click="playPause()" class="btn btn-primary"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+                <button ng-click="saveAudio()" class="btn btn-success">Upload</button>
+                {{ status }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

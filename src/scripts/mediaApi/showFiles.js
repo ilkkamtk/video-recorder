@@ -3,6 +3,7 @@ angular.module('myApp')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'views/showFiles.html'
+            templateUrl: 'scripts/mediaApi/showFiles.html',
+            controller: 'UserFilesController'
         };
     });

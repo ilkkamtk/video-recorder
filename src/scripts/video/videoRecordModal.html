@@ -1,0 +1,24 @@
+<div class="modal fade bs-example-modal-lg" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="VideoRecorder">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Record video</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Title" ng-model="title">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3" ng-model="description" placeholder="Description"></textarea>
+                </div>
+                <button ng-click="recordVideo()" class="btn btn-primary">REC</button>
+                <button ng-click="saveVideo()" class="btn btn-primary">Upload</button>
+                <p>{{ status }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

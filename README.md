@@ -12,5 +12,3 @@ Project starting point template for Web Based Mobile Applications course.
 4. `npm install` & `bower install` 
 5. Develop in _src/_ folder
 6. Build using `grunt`
-7. Publish your _build/_
-# w5-ex1

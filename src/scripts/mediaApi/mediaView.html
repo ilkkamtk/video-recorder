@@ -1,0 +1,25 @@
+<div>
+    <div class="row">
+        <menu></menu>
+        <div class="col-md-9 col-md-offset-3">
+
+            <h4>{{ title }}</h4>
+
+            <div ng-if="type == 'image'">
+                <img ng-src="{{trustSrc(path)}}" class="img-responsive">
+            </div>
+            <div ng-if="type == 'audio'">
+                <audio controls style="width:100%;">
+                    <source ng-src="{{ trustSrc(path) }}" type="{{ mimeType }}">
+                </audio>
+            </div>
+            <div ng-if="type == 'video'" class="embed-responsive embed-responsive-16by9">
+                <video controls>
+                    <source ng-src="{{ trustSrc(path) }}" type="{{ mimeType }}">
+                </video>
+            </div>
+            <p>{{ description }}</p>
+            <a href="#/main" type="button" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</div>

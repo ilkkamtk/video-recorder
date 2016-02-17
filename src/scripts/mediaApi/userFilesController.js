@@ -1,7 +1,7 @@
 angular.module('myApp')
     .controller('UserFilesController', UserFilesController);
 
-function UserFilesController($scope, $sce, AjaxFactory, MediaService) {
+function UserFilesController($scope, $state, AjaxFactory, MediaService) {
 
     $scope.trustSrc = MediaService.trustSrc;
 

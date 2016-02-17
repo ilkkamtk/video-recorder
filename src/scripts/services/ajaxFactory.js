@@ -20,6 +20,10 @@ function AjaxFactory($http, $httpParamSerializer) {
             }
         });
     };
+    
+    ajaxFunctions.getFile = function (args) {
+        return $http.get(urlBase + 'file/' + args);
+    };
 
     ajaxFunctions.fileByUser = function (args) {
         return $http.get(urlBase + 'files/user/' + args);

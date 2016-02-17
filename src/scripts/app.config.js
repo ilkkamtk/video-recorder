@@ -10,6 +10,11 @@ angular.module('myApp')
                 url: '/main',
                 templateUrl: 'scripts/UI/main.html',
             })
+            .state('view', {
+                url: '/view',
+                templateUrl: 'scripts/mediaApi/mediaView.html',
+                controller: 'MediaViewController'
+            })
             .state('logout', {
                 url: '/logout',
                 templateUrl: 'scripts/login/logout.html',

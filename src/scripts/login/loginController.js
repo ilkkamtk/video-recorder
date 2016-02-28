@@ -12,7 +12,9 @@ function LoginController($scope, $state, AjaxFactory, MediaService) {
                 window.localStorage.setItem('userPwd', $scope.pwd);
             }
             MediaService.logged = true;
-            $state.go('main');
+            $state.go('main', {
+                slideDir: 'slide-right'
+            });
         } else {
             MediaService.handleError(response.data);
         }
@@ -56,5 +58,4 @@ function LoginController($scope, $state, AjaxFactory, MediaService) {
     if (window.localStorage.getItem('userID') !== null) {
         $scope.login();
     }
-
 }

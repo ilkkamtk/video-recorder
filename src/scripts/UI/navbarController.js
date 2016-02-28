@@ -11,4 +11,10 @@ function NavbarController($scope, $state, MediaService) {
     if (MediaService.userData.userId === undefined) {
         $state.go('login');
     }
+
+    $scope.currState = $state;
+    $scope.$watch('currState.current.name', function (newValue, oldValue) {
+        $scope.state = newValue;
+    });
+
 }

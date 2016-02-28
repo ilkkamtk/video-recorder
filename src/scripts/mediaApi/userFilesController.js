@@ -10,12 +10,13 @@ function UserFilesController($scope, $state, AjaxFactory, MediaService) {
     AjaxFactory.fileByUser(user.userId)
         .then(function (response) {
             //console.log(response);
-            $scope.files = response.data;
+            MediaService.files = response.data;
+            $scope.files = MediaService.files;
         }, function (error) {
             MediaService.handleError(error);
         });
 
-    $scope.setFileAttrs = function (file) {
-        MediaService.setVariable('file', file);
+    $scope.setFileAttrs = function ($index) {
+        MediaService.setVariable('file', $index);
     };
 }

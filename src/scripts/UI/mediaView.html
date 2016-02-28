@@ -1,0 +1,43 @@
+<div class="row">
+    <menu></menu>
+    <div class="col-md-9 col-md-offset-3" id="swCont">
+        <div ng-click="swiping ? ( swiping = false ) : test()" ng-swipe-right="nextSlide(); swiping=true;" ng-swipe-left="prevSlide(); swiping=true;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center">
+                        <span  ng-if="mimeType.substr(0,5) == 'image'" class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                        <span ng-if="mimeType.substr(0,5) == 'audio'" class="glyphicon glyphicon-music" aria-hidden="true"></span>
+                        <span ng-if="mimeType.substr(0,5) == 'video'" class="glyphicon glyphicon-film" aria-hidden="true"></span>
+                        {{ title }}
+                    </h1>
+                </div>
+                <div class="panel-body">
+                    <div ng-if="type == 'image'">
+                        <img ng-src="{{trustSrc(path)}}" class="img-responsive center-block" onload="angular.element(this).scope().getExif(this)" ng-show="loaded">
+                        <img src="images/spinner.gif" class="img-responsive center-block" ng-hide="loaded">
+                    </div>
+                    <div ng-if="type == 'audio'">
+                        <audio controls style="width:100%;">
+                            <source ng-src="{{ trustSrc(path) }}" type="{{ mimeType }}">
+                        </audio>
+                    </div>
+                    <div ng-if="type == 'video'" class="embed-responsive embed-responsive-16by9">
+                        <video controls>
+                            <source ng-src="{{ trustSrc(path) }}" type="{{ mimeType }}">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Description</h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{ description }}</p>
+                    <h4 class="panel-title">Exif data:</h4>
+                    <pre>{{ exif }}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

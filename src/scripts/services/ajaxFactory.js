@@ -28,6 +28,15 @@ function AjaxFactory($http, $httpParamSerializer) {
     ajaxFunctions.fileByUser = function (args) {
         return $http.get(urlBase + 'files/user/' + args);
     };
+    
+    ajaxFunctions.uploadFile = function (formData) {
+            return $http.post(urlBase + '/upload', formData, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            });
+        };
 
     ajaxFunctions.saveMedia = function (args, win, fail) {
         var fileURL = args.url;

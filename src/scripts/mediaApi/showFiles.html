@@ -1,14 +1,14 @@
 <div class="col-md-9 col-md-offset-3">
     <div class="thumbnail" ng-repeat="file in files">
-        <a href="#/view" ng-click="setFileAttrs(file)">
+        <a href="#/view" ng-click="setFileAttrs($index)">
             <div ng-if="file.mimeType.substr(0,5) == 'image'">
-                <div class="img" ng-attr-style="background-image:url({{trustSrc(file.thumbNails.medium)}});"></div>
+                <div class="img" ng-attr-style="background-image:url({{trustSrc(file.thumbNails.medium)}});"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></div>
             </div>
             <div ng-if="file.mimeType.substr(0,5) == 'audio'">
-                <div class="img" style="background-image:url(http://placekitten.com/640/481);"></div>
+                <div class="img" style="background-image:url(http://placekitten.com/640/481);"><span class="glyphicon glyphicon-music" aria-hidden="true"></span></div>
             </div>
             <div ng-if="file.mimeType.substr(0,5) == 'video'">
-                <div class="img" ng-attr-style="background-image:url({{trustSrc(file.thumbNails.medium)}});"></div>
+                <div class="img" ng-attr-style="background-image:url({{trustSrc(file.thumbNails.medium)}});"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></div>
             </div>
             <div class="caption">
                 {{ file.title }}

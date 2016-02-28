@@ -5,7 +5,8 @@ function MediaService($sce) {
     var mediaVariables = {
         mediaUrl: 'http://util.mw.metropolia.fi/uploads/',
         userData: {},
-        file: {},
+        file: 0,
+        files: {},
         logged: false
     };
 

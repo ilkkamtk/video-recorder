@@ -25,7 +25,8 @@ module.exports = function (grunt) {
                 'bower_components/angular-ui-router/release/angular-ui-router.js',
                 'bower_components/ngCordova/dist/ng-cordova.js',
                 'bower_components/angular-animate/angular-animate.js',
-                'bower_components/angular-touch/angular-touch.js'
+                'bower_components/angular-touch/angular-touch.js',
+                    'bower_components/exif-js/exif.js'
 
              ],
                 dest: 'build/vendor.js'
@@ -72,6 +73,7 @@ module.exports = function (grunt) {
                     flatten: true,
                     src: [
             'bower_components/bootstrap/dist/css/bootstrap.min.css',
+            'bower_components/bootstrap-sidebar/dist/css/sidebar.css',
             'src/**/*.css'
           ],
                     dest: 'build/css/'
@@ -113,6 +115,8 @@ module.exports = function (grunt) {
                         content = content.replace(/<!--[\s\S]*?-->\s*\n*/g, "");
                         // Change bootstrap css file path
                         content = content.replace(/..\/bower_components\/bootstrap\/dist\//g, "");
+                        // Change sidebar css file path
+                        content = content.replace(/..\/bower_components\/bootstrap-sidebar\/dist\//g, "");
                         // Remove all script elements
                         content = content.replace(/<script.*script>\s*\n*/g, "");
                         // Add concatenated js files just before closing body tag
